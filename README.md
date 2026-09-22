@@ -2,7 +2,7 @@
 
 A Socratic hypothesis-refinement agent for phylogenetic comparative biology. It takes a researcher from a biological observation or uncertainty through an eight-stage protocol to a structured Hypothesis Reasoning Record, and stops deliberately before choosing a comparative method, study design, or analysis pipeline.
 
-Full behavior, scope boundary, and rationale live in [`skills/phylocrates/instructions.md`](skills/phylocrates/instructions.md) and [`skills/phylocrates/PHYLOCRATES_SPEC.md`](skills/phylocrates/PHYLOCRATES_SPEC.md) — every platform package below wraps that same core, unmodified.
+Full behavior, scope boundary, and rationale live in [`skills/phylocrates/instructions.md`](skills/phylocrates/instructions.md) and [`skills/phylocrates/PHYLOCRATES_SPEC.md`](skills/phylocrates/PHYLOCRATES_SPEC.md), every platform package below wraps that same core, unmodified.
 
 ## Pick your platform
 
