@@ -1,0 +1,300 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://phylocrates.local/schemas/hypothesis-reasoning-record-v0.6.json",
+  "title": "PhyloCrates Hypothesis Reasoning Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "status",
+    "motivating_problem",
+    "scientific_question",
+    "conceptual_question_types",
+    "assumptions",
+    "hypotheses",
+    "predictions",
+    "discriminating_expectations",
+    "claim_scope",
+    "unresolved_ambiguities",
+    "decision_rationale"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.6"
+    },
+    "status": {
+      "enum": [
+        "complete",
+        "provisional"
+      ]
+    },
+    "motivating_problem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "observation",
+        "problem_statement"
+      ],
+      "properties": {
+        "observation": {
+          "type": "string"
+        },
+        "problem_statement": {
+          "type": "string"
+        }
+      }
+    },
+    "scientific_question": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "primary",
+        "secondary"
+      ],
+      "properties": {
+        "primary": {
+          "type": "string"
+        },
+        "secondary": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "statement",
+          "status",
+          "rationale"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "statement": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "accepted",
+              "provisional",
+              "challenged"
+            ]
+          },
+          "rationale": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "hypotheses": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "role",
+          "statement",
+          "explanation_type",
+          "rationale"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "role": {
+            "enum": [
+              "focal",
+              "alternative"
+            ]
+          },
+          "statement": {
+            "type": "string"
+          },
+          "explanation_type": {
+            "enum": [
+              "adaptive",
+              "mechanistic",
+              "associational",
+              "non-adaptive",
+              "historical",
+              "common-cause",
+              "reverse-direction",
+              "artifact",
+              "contingency",
+              "other"
+            ]
+          },
+          "rationale": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "predictions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "hypothesis_id",
+          "prediction_id",
+          "statement",
+          "rationale"
+        ],
+        "properties": {
+          "hypothesis_id": {
+            "type": "string"
+          },
+          "prediction_id": {
+            "type": "string"
+          },
+          "statement": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "discriminating_expectations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "compares",
+          "statement",
+          "status"
+        ],
+        "properties": {
+          "compares": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "string"
+            }
+          },
+          "statement": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "discriminating",
+              "partially-discriminating",
+              "non-discriminating"
+            ]
+          }
+        }
+      }
+    },
+    "claim_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "biological_level",
+        "temporal_scope",
+        "taxonomic_scope",
+        "geographic_scope",
+        "claim_type",
+        "explicit_nonclaims"
+      ],
+      "properties": {
+        "biological_level": {
+          "type": "string"
+        },
+        "temporal_scope": {
+          "type": "string"
+        },
+        "taxonomic_scope": {
+          "type": "string"
+        },
+        "geographic_scope": {
+          "type": "string"
+        },
+        "claim_type": {
+          "enum": [
+            "descriptive",
+            "associational",
+            "directional",
+            "mechanistic",
+            "causal"
+          ]
+        },
+        "explicit_nonclaims": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "unresolved_ambiguities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "decision_rationale": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "decision",
+          "rationale",
+          "source",
+          "status"
+        ],
+        "properties": {
+          "decision": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "source": {
+            "enum": [
+              "user",
+              "source-grounded principle",
+              "working assumption"
+            ]
+          },
+          "status": {
+            "enum": [
+              "accepted",
+              "provisional",
+              "rejected",
+              "superseded"
+            ]
+          }
+        }
+      }
+    },
+    "conceptual_question_types": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "enum": [
+          "cross_taxon_relationship",
+          "continuous_trait_process",
+          "phylogenetic_resemblance",
+          "ancestral_historical_state",
+          "discrete_transition",
+          "diversification"
+        ]
+      },
+      "description": "Hypothesis-shape metadata per PHYLOCRATES_SPEC.md section 5. Not a PCM method or family name."
+    }
+  }
+}

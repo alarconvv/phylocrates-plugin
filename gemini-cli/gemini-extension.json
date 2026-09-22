@@ -1,0 +1,6 @@
+{
+  "name": "phylocrates",
+  "version": "0.6.0",
+  "description": "Socratic hypothesis-refinement agent for phylogenetic comparative biology",
+  "contextFileName": "GEMINI.md"
+}

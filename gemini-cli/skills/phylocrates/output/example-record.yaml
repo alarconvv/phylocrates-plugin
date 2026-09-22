@@ -1,0 +1,68 @@
+schema_version: "0.6"
+status: "complete"
+
+motivating_problem:
+  observation: "High-elevation species in the focal clade appear to have higher extinction risk."
+  problem_statement: "It is unclear whether elevational specialization itself is related to extinction risk or whether the pattern reflects other ecological or historical explanations."
+
+scientific_question:
+  primary: "Is elevational specialization a plausible explanation for variation in extinction risk across the focal clade, relative to competing ecological and historical explanations?"
+  secondary: []
+
+conceptual_question_types:
+  - "cross_taxon_relationship"
+
+assumptions:
+  - id: A1
+    statement: "Elevational specialization is biologically comparable across the focal taxa."
+    status: "provisional"
+    rationale: "The hypothesis depends on specialization having comparable meaning across taxa."
+
+hypotheses:
+  - id: H1
+    role: "focal"
+    statement: "Greater elevational specialization contributes to higher extinction risk."
+    explanation_type: "mechanistic"
+    rationale: "Narrower environmental tolerance could increase vulnerability to environmental change."
+  - id: H2
+    role: "alternative"
+    statement: "The apparent relationship is primarily explained by geographic range restriction rather than elevational specialization itself."
+    explanation_type: "common-cause"
+    rationale: "Range restriction could covary with both specialization and risk."
+  - id: H3
+    role: "alternative"
+    statement: "The pattern largely reflects shared evolutionary history within one or a few vulnerable clades."
+    explanation_type: "historical"
+    rationale: "Many species may inherit both ecological traits and vulnerability from common ancestors."
+
+predictions:
+  - hypothesis_id: H1
+    prediction_id: P1
+    statement: "Higher vulnerability should recur in independently evolved cases of stronger elevational specialization."
+    rationale: "A general role for specialization predicts recurrence beyond one inherited clade-level event."
+  - hypothesis_id: H3
+    prediction_id: P2
+    statement: "The association should be concentrated in one or a few historical lineages rather than recurring independently."
+    rationale: "The historical explanation does not require repeated association."
+
+discriminating_expectations:
+  - compares: [H1, H3]
+    statement: "Repeated correspondence across independent evolutionary events favors H1 more than a pattern concentrated in a single inherited lineage."
+    status: "discriminating"
+
+claim_scope:
+  biological_level: "species and evolutionary lineages"
+  temporal_scope: "present-day extinction risk interpreted in an evolutionary comparative context"
+  taxonomic_scope: "focal clade"
+  geographic_scope: "global within the focal clade"
+  claim_type: "mechanistic"
+  explicit_nonclaims:
+    - "The hypothesis does not by itself establish that elevation is the sole cause of extinction risk."
+
+unresolved_ambiguities: []
+
+decision_rationale:
+  - decision: "Retain historical inheritance as a formal alternative."
+    rationale: "A many-species pattern can arise from one ancestral event and therefore does not automatically represent repeated evolutionary evidence."
+    source: "source-grounded principle"
+    status: "accepted"
